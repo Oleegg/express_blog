@@ -1,25 +1,30 @@
 import React from "react";
-import './navbar.css'
+import "./navbar.css";
+import { NavLink,Link } from "react-router-dom";
+import { Auth } from "../auth/Auth";
 
-export const Navbar = () =>{
-  return(
-
-    <nav className="nav">
-      <h2><a href="/">Title</a></h2>
-      <ul>
-        <li className="active">
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/comments">Comments</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/contacts">Contacts</a>
-        </li>
-      </ul>
-    </nav>
-  )
-}
+export const Navbar = () => {
+  return (
+    <div className="navbar">
+      <h2>
+        <Link className="nav-link" to="/">Title</Link>
+      </h2>
+      <div className="navbar__container">
+        <nav className="nav">
+          <ul>
+            <li>
+              <NavLink className="nav-link" to="/comments">Comments</NavLink>
+            </li>
+            <li>
+              <NavLink className="nav-link" to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink className="nav-link" to="/contacts">Contacts</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <Link className="nav-link" to="/auth"><Auth /></Link>
+      </div>
+    </div>
+  );
+};
