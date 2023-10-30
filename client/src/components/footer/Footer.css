@@ -1,0 +1,30 @@
+.footer {
+  background-color: #9c9c9e;
+  width: 100%;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer__text {
+  font-style: italic;
+  font-size: 20px;
+  margin-left: 20px;
+  color: #1c1c1c;
+}

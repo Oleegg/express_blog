@@ -1,0 +1,25 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.contacts__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.contacts__phone {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: aliceblue;
+  gap: 10px;
+}
+
+.contacts__phone img {
+  width: 25px;
+}
