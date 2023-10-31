@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: aliceblue;
+}
+
+.nav li {
+  padding: 0.5rem;
+  border-radius: 10%;
+}
+
+.nav li:hover {
+  color: rgb(237, 229, 229);
+  text-shadow: -1px 1px 0 #040504, 1px 1px 0 #040504, 1px -1px 0 #040504,
+    -1px -1px 0 #040504;
+}
+
+.active {
+  background-color: #4a5160;
+}

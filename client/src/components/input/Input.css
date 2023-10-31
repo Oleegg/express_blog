@@ -1,0 +1,35 @@
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label__text {
+  text-align: left;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 5px;
+}
+
+input {
+  background: #d5d3d3;
+  outline: none;
+  border: none;
+  padding: 15px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  transition: background-color 5000s ease-in-out 0s;
+}

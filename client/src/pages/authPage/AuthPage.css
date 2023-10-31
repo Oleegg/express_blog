@@ -1,0 +1,10 @@
+.container-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgb(133, 77, 141);
+}
+
+.auth-link {
+  margin-left: 10px;
+}

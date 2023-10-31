@@ -6,13 +6,13 @@ const userRouter = require("./routes/user.routes");
 const postRouter = require("./routes/post.router");
 const authRouter = require("./routes/auth/auth.router");
 
-const PORT = process.env.PORT || 3200;
+const PORT = process.env.PORT || 4200;
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.sendFile(path.resolve(__dirname, "static", "index.html"));
 });
 

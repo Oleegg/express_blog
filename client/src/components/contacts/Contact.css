@@ -1,0 +1,9 @@
+.contact-mini {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.address {
+  display: block;
+}
