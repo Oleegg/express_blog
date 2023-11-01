@@ -1,55 +1,69 @@
-import React, { useState } from "react";
-import { Arrows } from "../arrows/Arrows";
-import { Slide } from "../slide/Slide";
+import React, { useState, useEffect, cloneElement } from "react";
 import i1 from "../../ui/icons/pictures/rent-bike.jpg";
 import i2 from "../../ui/icons/pictures/service.jpg";
 import i3 from "../../ui/icons/pictures/service-2.jpg";
-
+// import { Slide } from "../slide/Slide";
+import { Arrows } from "../arrows/Arrows";
 import "./Slider.css";
 
-const images = [i1, i2, i3];
+const images = [
+  { url: i1, title: "Rental of bicycles and child seats" },
+  { url: i2, title: "Bicycle and scooter repair" },
+  { url: i3, title: "Bike tuning and maintenance" },
+];
 
-export const Slider = (width, height) => {
-  const [slide, setSlide] = useState(0);
-  console.log(slide);
+const SLIDERS = images.map((el, i) => (
+  <div key={i}>
+    <img src={el.url} alt={el.title} className="slide-image" />
+    <div
+      className={
+        i === 0 || i === 2
+          ? "slide-title title-right"
+          : i === 1
+          ? "slide-title title-top-left"
+          : "slide-title"
+      }
+    >
+      {el.title}
+    </div>
+  </div>
+));
 
-  const changeSlide = (direction) => {
+export const Slider = () => {
+  const [active, setActive] = useState(0);
+  let scrollInterval = null;
+
+  const changeSlide = (direction = 1) => {
     let slideNumber = 0;
 
-    if (slide + direction < 0) {
-      slideNumber = images.length - 1;
+    if (active + direction < 0) {
+      slideNumber = SLIDERS.length - 1;
     } else {
-      slideNumber = (slide + direction) % images.length;
+      slideNumber = (active + direction) % SLIDERS.length;
     }
-    setSlide(slideNumber);
+
+    setActive(slideNumber);
   };
 
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    scrollInterval = setTimeout(() => {
+      setActive((active + 1) % images.length);
+    }, 5000);
+
+    return () => clearTimeout(scrollInterval);
+  });
+
   return (
-    <div
-      style={{ width, height }}
-      className="slider"
-      // onTouchStart={handleTouchStart}
-      // onTouchMove={handleTouchMove}
-    >
-      {/* <SliderContext.Provider
-        value={{
-          goToSlide,
-          changeSlide,
-          slidesCount: items.length,
-          slideNumber: slide,
-          items,
-        }}
-      > */}
-      <Arrows changeSlide={changeSlide} />
-      <div
-        className="slide-list"
-        style={{ transform: `translateX(-${slide * 100}%)` }}
-      >
-        {images.map((url, index) => (
-          <Slide key={index} url={url} title={"text"} />
-        ))}
-      </div>
-      {/* </SliderContext.Provider> */}
+    <div className="carousel">
+      {SLIDERS.map((item, index) => {
+        const activeClass = active === index ? " visible" : "";
+        console.log(item);
+        return cloneElement(item, {
+          className: `carousel-item ${activeClass}`,
+        });
+      })}
+      <Arrows className="arrows" changeSlide={changeSlide} />
     </div>
   );
 };
