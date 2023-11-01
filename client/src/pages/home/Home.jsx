@@ -6,8 +6,8 @@ export const HomePage = () => {
   return (
     <div className="home">
       <Slider />
-      <div className="home-content">
-        <div className="picture"></div>
+      <div className="home-content content">
+        {/* <div className="picture"></div> */}
         {/* <div className="content"> */}
         <div className="home__text">
           <div className="star-container">

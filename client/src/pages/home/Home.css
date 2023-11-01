@@ -6,51 +6,38 @@
 }
 
 .home-content {
-  display: grid;
-  grid-template-columns: 50% 4fr 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: "title title title" "picture content x";
-  column-gap: 3%;
-  margin-top: 20px;
 }
 
 h1 {
   margin: 0 auto 20px;
   text-align: center;
-  grid-area: title;
 }
 
 .picture {
   background-image: url("../../ui//icons//pictures/part-1.jpg");
   background-repeat: no-repeat;
-
   background-size: cover;
   /* background-attachment: fixed; */
   background-position: center center;
-  grid-area: picture;
-}
-
-.carousel {
-  grid-area: slider;
 }
 
 .home__text {
   display: flex;
   flex-direction: column;
-  grid-area: content;
 }
 
 .star-container {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .star {
   background-image: url("../../ui/icons/png/sprocket.png");
   background-repeat: no-repeat;
-  width: 40px;
-  min-height: 20px;
+  width: 60px;
+  height: 60px;
   background-size: cover;
   /* background-attachment: fixed; */
   background-position: center center;
