@@ -1,6 +1,5 @@
 .home {
   margin: 0 auto;
-  padding: 10px;
   min-height: 100vh;
   background-color: #596273;
   color: white;
@@ -12,6 +11,7 @@
   grid-template-rows: auto auto;
   grid-template-areas: "title title title" "picture content x";
   column-gap: 3%;
+  margin-top: 20px;
 }
 
 h1 {
@@ -28,6 +28,10 @@ h1 {
   /* background-attachment: fixed; */
   background-position: center center;
   grid-area: picture;
+}
+
+.carousel {
+  grid-area: slider;
 }
 
 .home__text {

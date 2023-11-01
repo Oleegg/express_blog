@@ -1,11 +1,12 @@
 import React from "react";
 import "./Home.css";
+import { Slider } from "../../components/slider/Slider";
 
 export const HomePage = () => {
   return (
     <div className="home">
+      <Slider />
       <div className="home-content">
-        <h1>HomePage</h1>
         <div className="picture"></div>
         {/* <div className="content"> */}
         <div className="home__text">
