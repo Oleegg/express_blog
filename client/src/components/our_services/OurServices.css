@@ -1,0 +1,18 @@
+.services {
+  display: flex;
+  flex-direction: column;
+}
+
+.services__content {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+}
+
+.services__img {
+  width: 200px;
+  height: 200px;
+}
+
+.services__text {
+}
