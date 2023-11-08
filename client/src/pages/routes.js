@@ -7,11 +7,13 @@ import { Comments } from "./Comments";
 import { About } from "./About";
 import { NotFound } from "./404/NotFound";
 import { LoginPage } from "./loginPage/LoginPage";
+import { Services } from "./services/Services";
 
 export const useRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/sign-in" element={<LoginPage />} />
       <Route path="/sign-up" element={<AuthPage />} />
       <Route path="/contacts" element={<Contacts />} />

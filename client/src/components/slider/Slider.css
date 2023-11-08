@@ -60,3 +60,8 @@
     opacity: 1;
   }
 }
+
+.carousel:hover .arrows {
+  opacity: 1;
+  transition-duration: 2s;
+}
