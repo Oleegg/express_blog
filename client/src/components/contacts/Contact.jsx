@@ -3,7 +3,7 @@ import React from "react";
 
 import "./Contact.css";
 
-export const Contact = () => {
+export const ContactMap = () => {
   return (
     <div className="contact">
       <iframe
@@ -19,7 +19,7 @@ export const Contact = () => {
   );
 };
 
-export const ContactMini = () => {
+export const ContactMiniMap = () => {
   return (
     <div className="contact-mini">
       <div className="address">

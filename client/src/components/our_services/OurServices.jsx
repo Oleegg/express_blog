@@ -5,8 +5,10 @@ import "./OurServices.css";
 export const OurServices = () => {
   return (
     <div className="services">
+      <h2>Our Services</h2>
       {SERVICES.map(({ image, text }, i) => (
         <div
+          key={i}
           className={
             i % 2 === 0 ? "services__content" : "services__content revers"
           }

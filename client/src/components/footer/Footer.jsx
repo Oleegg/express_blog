@@ -3,7 +3,7 @@ import logoBike from "../../ui/icons/svg/logo.svg";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import { SocialLinks } from "../social-links/SocialLinks";
-import { ContactMini } from "../contacts/Contact";
+import { ContactMiniMap } from "../contacts/Contact";
 
 export const Footer = () => {
   return (
@@ -17,7 +17,7 @@ export const Footer = () => {
           </h2>
           <p className="footer__text">Bicycle rental and repair</p>
         </div>
-        <ContactMini />
+        <ContactMiniMap />
         <div className="footer__content">
           <SocialLinks />
           2023

@@ -1,17 +1,17 @@
 import React from "react";
-import "./App.css";
 
-import { Header } from "../../components/header/Header";
 import { useRoutes } from "../../pages/routes";
-import { Footer } from "../../components/footer/Footer";
+
+import "./App.css";
+import { Layout } from "../../components/layout/Layout";
 
 function App() {
   const routes = useRoutes();
   return (
     <div className="wrapper">
-      <Header />
-      <main>{routes}</main>
-      <Footer />
+      <Layout>
+        <main>{routes}</main>
+      </Layout>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import { Contact } from "../../components/contacts/Contact";
-import phone from "../../ui/icons/svg/phone.svg";
+import { ContactMap } from "../../components/contacts/Contact";
+import phoneImg from "../../ui/icons/svg/phone.svg";
+import { CONTACTS } from "./constants";
 import "./Contacts.css";
 
 export const Contacts = () => {
@@ -8,16 +9,22 @@ export const Contacts = () => {
     <div className="content contacts">
       <div className="contacts__text">
         <h2>Contacts</h2>
-        <p>New Borovaya (Kopishe) Leonardo da Vinci 2 BikeBox</p>
-        <a className="contacts__phone" href="tel: +375 29 389 98 11">
-          <img src={phone} alt="phone"></img>+375 29 389 98 11
-        </a>
-
-        <a className="contacts__phone" href="tel: +375 29 389 98 11">
-          <img src={phone} alt="phone"></img>+375 29 389 98 11
-        </a>
+        <p>{CONTACTS.address}</p>
+        {CONTACTS.phones.map((phone, i) => {
+          const href = `tel: ${phone}`;
+          return (
+            <a key={i} className="contacts__phone" href={href}>
+              <img src={phoneImg} alt="phone"></img> {phone}
+            </a>
+          );
+        })}
+        <div className="operating-mode">
+          <h4>operating mode:</h4>
+          <p>weekdays:{CONTACTS.operating_mode.weekdays}</p>
+          <p>weekend:{CONTACTS.operating_mode.weekend}</p>
+        </div>
       </div>
-      <Contact />
+      <ContactMap />
     </div>
   );
 };

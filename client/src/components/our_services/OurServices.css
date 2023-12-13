@@ -1,7 +1,11 @@
 .services {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin: 20px;
+}
+
+.services h2 {
+  text-align: center;
 }
 
 .services__content {
