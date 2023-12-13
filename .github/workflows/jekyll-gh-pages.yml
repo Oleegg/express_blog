@@ -29,20 +29,17 @@ jobs:
       run:
         working-directory: server
     steps:
-      - uses: actions/checkout@v3
-
-
-      - name: Install specific npm version
-        run: npm i -g npm@9.8.0
-
-      - name: Install dependencies
-        run: |
-          npm run install-deps
-          npm run build-deps
-          npm ci
-
-      - name: Build
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Build with Jekyll
         run: npm run build
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
 
   # Deployment job
   deploy:
